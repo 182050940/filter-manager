@@ -1,6 +1,6 @@
 <?php
 
-namespace Toplan\FilterManager\Facades;
+namespace Laoliu\FilterManager\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Toplan\FilterManager;
+namespace Laoliu\FilterManager;
 
 /**
  * Class FilterManager

@@ -2,19 +2,19 @@
 
 A filter manager package for the product list filter, help you elegant generate filter url.
 
-**[中文文档](https://github.com/toplan/FilterManager/blob/master/README_CN.md)**
+**[中文文档](https://github.com/182050940/filter-manager/blob/master/README_CN.md)**
 
 ![demo image](fm-demo2.png)
 
 # Install
 
 ```php
-composer require 'toplan/filter-manager:~1.0.4'
+composer require 'laoliu/filter-manager:~1.0.5'
 ```
 
 # Usage
 
-### 1. The preparatory work
+### 1. Use in Controller
 
 ```php
 require 'path/to/vendor/autoload.php';
@@ -32,24 +32,7 @@ $fm = FilterManager::create($paramsArray)->setBlackList(['page']);
 //then, render `$fm` value to your template!
 ```
 
-**Or used in laravel just like this:**
-
-Find the providers key in config/app.php and register the FilterManger Service Provider.
-```php
-    'providers' => array(
-        Toplan\FilterManager\FilterManagerServiceProvider::class,
-    )
-```    
-Find the aliases key in config/app.php.
-```php
-    'aliases' => array(
-        'FilterManager' => Toplan\FilterManager\Facades\FilterManager::class,
-    )
-```
-
-### 2. Just enjoy it
-
-use value `$fm` in template:
+### 2. use value `$fm` in template:
 ```html
 <!-- example -->
 <li class="item all {{$fm->isActive('gender', FM_SELECT_ALL, 'active', '')}}">

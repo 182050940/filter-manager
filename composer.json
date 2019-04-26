@@ -1,7 +1,7 @@
 {
-    "name": "toplan/filter-manager",
+    "name": "laoliu/filter-manager",
     "description": "Filter manager package for product list,elegant generate url.",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "keywords": ["filter", "product list filter manager"],
     "authors": [
         {
@@ -20,5 +20,15 @@
             "Toplan\\FilterManager": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laoliu\\FilterManager\\FilterManagerServiceProvider"
+            ],
+            "aliases": {
+                "FilterManager": "Laoliu\\FilterManager\\Facades\\FilterManager"
+            }
+        }
+    }
 }

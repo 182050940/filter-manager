@@ -9,16 +9,16 @@
 # 安装
 
 ```php
-composer require 'toplan/filter-manager:~1.0.4'
+composer require 'laoliu/filter-manager:~1.0.5'
 ```
 
 # 打开姿势
 
-### 1. 准备工作
+### 1. 在控制器中使用
 
 ```php
 //假设这是在你的控制器中
-use Toplan\FilterManager\FilterManager as FilterManager;
+use Laoliu\FilterManager\FilterManager as FilterManager;
 
 //获取参数
 $paramsArray = [
@@ -32,25 +32,8 @@ $fm = FilterManager::create($paramsArray)->setBlackList(['page']);
 //然后将变量`$fm`渲染到你的模板!
 ```
 
-**或者直接在laravel中这样使用:**
 
-在config/app.php文件中找到名为`providers`的key，然后为FilterManager的服务提供器。
-```php
-    'providers' => array(
-        Toplan\FilterManager\FilterManagerServiceProvider::class,
-    )
-```
-
-在 config/app.php文件中找到名为`aliases`的key， 然后为FilterManger添加别名。
-```php
-    'aliases' => array(
-        'FilterManager' => Toplan\FilterManager\Facades\FilterManager::class,
-    )
-```
-
-### 2. Just enjoy it!
-
-在模板中使用`$fm`:
+### 2. 在模板中使用`$fm`:
 ```html
 <!-- example -->
 <li class="item all {{$fm->isActive('gender', FM_SELECT_ALL, 'active', '')}}">

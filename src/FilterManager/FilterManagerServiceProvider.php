@@ -1,6 +1,6 @@
 <?php
 
-namespace Toplan\FilterManager;
+namespace Laoliu\FilterManager;
 
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\ServiceProvider;
@@ -21,9 +21,9 @@ class FilterManagerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['FilterManager'] = $this->app->share(function () {
-                return FilterManager::create(Input::all())->setBlackList(['page']);
-            });
+        $this->app->singleton('FilterManager', function () {
+            return new FilterManager(Input::all(), '', ['page']);
+        });
     }
 
     /**

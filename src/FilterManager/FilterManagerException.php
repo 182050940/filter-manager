@@ -1,6 +1,6 @@
 <?php
 
-namespace Toplan\FilterManager;
+namespace Laoliu\FilterManager;
 
 class FilterManagerException extends \Exception
 {
